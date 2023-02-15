@@ -1,0 +1,114 @@
+#root {
+  max-width: 1440px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.App-header {
+  background-image: url(./assets/pattern-bg.png);
+  height: 250px;
+  color: white;
+  padding: 30px;
+  font-size: 25px;
+}
+
+input {
+  height: 50px;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+
+button[type="submit"],
+input[type="text"] {
+  height: 55px;
+  border-radius: 0;
+  background: white;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  outline: inherit;
+}
+
+button[type="submit"] {
+  width: 55px;
+  height: 55px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background: black;
+  color: white;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+input[type="text"] {
+  width: 500px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  background: white;
+  color: black;
+  font-size: 18px;
+  border: none;
+  padding: 20px;
+  font: inherit;
+  outline: inherit;
+}
+
+input[type="text"]::placeholder {
+  font-weight: 400;
+  font-size: 18px;
+  color: hsl(0, 0%, 59%);
+}
+
+.ip-container {
+  z-index: 2;
+  position: absolute;
+  top: 26%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 15px;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+
+.ip-container > div {
+  padding: 0 20px;
+  height: 50px;
+  border-right: 1px solid hsl(0, 0%, 59%);
+}
+
+.ip-container > div:last-child {
+  border-right: none;
+}
+
+.isp {
+  border-right: none;
+}
+
+#map {
+  height: calc(100vh - 250px);
+}
+
+.leaflet-container {
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+}
