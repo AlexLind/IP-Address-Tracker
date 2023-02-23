@@ -7,7 +7,7 @@ function App() {
   const [location, setLocation] = useState({});
   const [timezone, setTimezone] = useState("");
   const [isp, setIsp] = useState("");
-  const [center, setCenter] = useState([51.505, -0.09]);
+  const [center, setCenter] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,7 +21,6 @@ function App() {
       console.log("Invalid IP address or domain");
       return;
     }
-    console.log(coordinates);
     setIp(e.target[0].value);
   };
 
@@ -32,7 +31,6 @@ function App() {
         `https://geo.ipify.org/api/v2/country,city?apiKey=at_b5zYcEkWq4qJhRRhqivxuwToUzwQb&ipAddress=${ip}`
       );
       const data = await response.json();
-      console.log(data);
       setCenter([data.location.lat, data.location.lng]);
       setIp(data.ip);
       setLocation(data.location);
@@ -81,7 +79,7 @@ function App() {
       ) : null}
       <main>
         <div id="map">
-          {center ? (
+          {center.length === 2 ? (
             <MapContainer center={center} zoom={13} scrollWheelZoom={true}>
               <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

@@ -77,8 +77,7 @@ input[type="text"]::placeholder {
 .ip-container {
   z-index: 2;
   position: absolute;
-  top: 26%;
-  left: 50%;
+  top: 250px;
   transform: translate(-50%, -50%);
   background-color: white;
   border-radius: 15px;
@@ -86,7 +85,7 @@ input[type="text"]::placeholder {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 100px;
+  height: 120px;
 }
 
 .ip-container > div {
